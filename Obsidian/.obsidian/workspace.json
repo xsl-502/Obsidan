@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "会议纪要/Time_1.md",
-                "mode": "source",
+                "file": "零知识证明问题/IDEAL - zk-SNARK Agent 安全治理架构.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Time_1"
+              "title": "IDEAL - zk-SNARK Agent 安全治理架构"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "f13f8c557ac172ce",
@@ -180,11 +180,22 @@
       "bases:新建数据库": false
     }
   },
-  "active": "66f8d184f725d1cd",
+  "active": "880dafddfb639938",
   "lastOpenFiles": [
+    "零知识证明问题/Cloak Honey Trap - Proactive Defenses Against LLM Agents.md",
+    "零知识证明问题/zkCNN - Zero Knowledge Proofs for Convolutional Neural Network Predictions and Accuracy.md",
+    "零知识证明问题/ZKML 与 Agent Security 论文阅读索引.md",
+    "会议纪要/Time_1.md",
+    "零知识证明问题/IDEAL - zk-SNARK Agent 安全治理架构.md",
+    "零知识证明问题/DIZK - A Distributed Zero Knowledge Proof System.md",
+    "零知识证明问题/SAGA - A Security Architecture for Governing AI Agentic Systems.md",
+    "零知识证明问题/Mystique - Efficient Conversions for Zero-Knowledge Proofs with Applications to Machine Learning.md",
+    "零知识证明问题/Zero-Knowledge Proofs of Training for Deep Neural Networks - Kaizen.md",
+    "零知识证明问题/FAIR ZK - A Scalable System to Prove Machine Learning Fairness in Zero-Knowledge.md",
+    "零知识证明问题/zk-SNARK教学.md",
+    "零知识证明问题/教学.md",
     "零知识证明问题",
     "毕业设计/重点讲解.md",
-    "会议纪要/Time_1.md",
     "会议纪要",
     "毕业设计/演讲稿.md",
     "橙啦奖学金申请/追光而上，成电逆袭：11408 考研经验分享与避坑指南.md",
