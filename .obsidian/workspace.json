@@ -1,0 +1,212 @@
+{
+  "main": {
+    "id": "0a19a89e629d7aa7",
+    "type": "split",
+    "children": [
+      {
+        "id": "44d821e0776a9e35",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "dc73e205f67fc03f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Obsidian/零知识证明问题/ZKML 与 Agent Security 论文阅读索引.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ZKML 与 Agent Security 论文阅读索引"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "97e0e2eff26c1870",
+    "type": "split",
+    "children": [
+      {
+        "id": "c33dcc259c7bd640",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "50113b619b831dcb",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "305e01b6fa9bf997",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "3a5c3bc2977273d7",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "6c7cb524746b0efd",
+    "type": "split",
+    "children": [
+      {
+        "id": "4708c877ad44e7aa",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e2b4e2451bd58d66",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "反向链接"
+            }
+          },
+          {
+            "id": "567ae8aa7afb4d9c",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "出链"
+            }
+          },
+          {
+            "id": "96a93498132d4740",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "50c7f1ad23ee38f3",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "ffd038dc2b588c3a",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "dc73e205f67fc03f",
+  "lastOpenFiles": [
+    "零知识证明/PPT/UESTC_Beamer_Theme/standard_template/slide.synctex(busy)",
+    "零知识证明/PPT/UESTC_Beamer_Theme/first_group_meeting/first_group_meeting.synctex(busy)",
+    "零知识证明/PPT/UESTC_Beamer_Theme/first_group_meeting/first_group_meeting.toc",
+    "零知识证明/PPT/UESTC_Beamer_Theme/first_group_meeting/first_group_meeting.tex",
+    "零知识证明/PPT/UESTC_Beamer_Theme/first_group_meeting/first_group_meeting.synctex.gz",
+    "零知识证明/PPT/UESTC_Beamer_Theme/first_group_meeting/first_group_meeting.snm",
+    "零知识证明/PPT/UESTC_Beamer_Theme/first_group_meeting/first_group_meeting.pdf",
+    "零知识证明/PPT/UESTC_Beamer_Theme/first_group_meeting/first_group_meeting.out",
+    "零知识证明/PPT/UESTC_Beamer_Theme/first_group_meeting/first_group_meeting.nav",
+    "零知识证明/PPT/UESTC_Beamer_Theme/first_group_meeting/first_group_meeting.log",
+    "零知识证明/PPT/UESTC_Beamer_Theme/first_group_meeting/first_group_meeting.aux",
+    "Obsidian/零知识证明问题/zkCNN - Zero Knowledge Proofs for Convolutional Neural Network Predictions and Accuracy.md",
+    "Obsidian/零知识证明问题/zk-SNARK教学.md",
+    "Obsidian/零知识证明问题/Zero-Knowledge Proofs of Training for Deep Neural Networks - Kaizen.md",
+    "Obsidian/零知识证明问题/SAGA - A Security Architecture for Governing AI Agentic Systems.md",
+    "Obsidian/零知识证明问题/IDEAL - zk-SNARK Agent 安全治理架构.md",
+    "Obsidian/零知识证明问题/FAIR ZK - A Scalable System to Prove Machine Learning Fairness in Zero-Knowledge.md",
+    "Obsidian/零知识证明问题/DIZK - A Distributed Zero Knowledge Proof System.md",
+    "Obsidian/零知识证明问题/Cloak Honey Trap - Proactive Defenses Against LLM Agents.md",
+    "Obsidian/零知识证明问题/教学.md",
+    "Obsidian/会议纪要/Time_1.md",
+    "经管毕业论文/03_文献与数据清单/年报数据提取结果说明.md",
+    "经管毕业论文/03_文献与数据清单/流动性比例补充结果说明.md",
+    "经管毕业论文/03_文献与数据清单/后续论文写作详细计划.md",
+    "经管毕业论文/03_文献与数据清单/变量字典.md",
+    "经管毕业论文/03_文献与数据清单/数据准备报告.md"
+  ]
+}
