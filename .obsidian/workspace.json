@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "44d821e0776a9e35",
+        "id": "e7c24e0360af0896",
         "type": "tabs",
         "children": [
           {
-            "id": "dc73e205f67fc03f",
+            "id": "b17fed851d9b417e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Obsidian/零知识证明问题/ZKML 与 Agent Security 论文阅读索引.md",
-                "mode": "source",
+                "file": "AgentSecurity/Cloak,SAGA 文献综述.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ZKML 与 Agent Security 论文阅读索引"
+              "title": "Cloak,SAGA 文献综述"
             }
           }
         ]
@@ -41,7 +41,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "文件列表"
@@ -180,8 +182,15 @@
       "bases:新建数据库": false
     }
   },
-  "active": "dc73e205f67fc03f",
+  "active": "b17fed851d9b417e",
   "lastOpenFiles": [
+    "零知识证明/论文/2505.07997v2.pdf",
+    "AgentSecurity/Cloak,SAGA 文献综述.md",
+    "AgentSecurity/Syros 等 - 2025 - SAGA A Security Architecture for Governing AI Agentic Systems.pdf",
+    "AgentSecurity/Ayzenshteyn 等 - Cloak, Honey, Trap Proactive Defenses Against LLM Agents_副本.pdf",
+    "零知识证明/note/Cloak Honey Trap - Proactive Defenses Against LLM Agents.md",
+    "AgentSecurity",
+    "2026-08-03.md",
     "零知识证明/PPT/UESTC_Beamer_Theme/standard_template/slide.synctex(busy)",
     "零知识证明/PPT/UESTC_Beamer_Theme/first_group_meeting/first_group_meeting.synctex(busy)",
     "零知识证明/PPT/UESTC_Beamer_Theme/first_group_meeting/first_group_meeting.toc",
@@ -189,10 +198,6 @@
     "零知识证明/PPT/UESTC_Beamer_Theme/first_group_meeting/first_group_meeting.synctex.gz",
     "零知识证明/PPT/UESTC_Beamer_Theme/first_group_meeting/first_group_meeting.snm",
     "零知识证明/PPT/UESTC_Beamer_Theme/first_group_meeting/first_group_meeting.pdf",
-    "零知识证明/PPT/UESTC_Beamer_Theme/first_group_meeting/first_group_meeting.out",
-    "零知识证明/PPT/UESTC_Beamer_Theme/first_group_meeting/first_group_meeting.nav",
-    "零知识证明/PPT/UESTC_Beamer_Theme/first_group_meeting/first_group_meeting.log",
-    "零知识证明/PPT/UESTC_Beamer_Theme/first_group_meeting/first_group_meeting.aux",
     "Obsidian/零知识证明问题/zkCNN - Zero Knowledge Proofs for Convolutional Neural Network Predictions and Accuracy.md",
     "Obsidian/零知识证明问题/zk-SNARK教学.md",
     "Obsidian/零知识证明问题/Zero-Knowledge Proofs of Training for Deep Neural Networks - Kaizen.md",

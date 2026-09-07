@@ -10,7 +10,7 @@
 \author{徐诗霖}
 \title{零知识证明论文阅读与研究设想}
 \subtitle{第一次组会汇报}
-\institute{电子科技大学}
+\institute{计算机科学与工程学院}
 \date{2026年7月}
 
 \definecolor{deepblue}{rgb}{0,0,0.5}
@@ -170,11 +170,11 @@
   \begin{itemize}
     \item \kw{SAGA}：强调 Agent 身份、注册、访问控制 token、跨 Agent 通信策略。
     \item \kw{Cloak, Honey, Trap}：展示 LLM Agent 会被诱导、误导、循环和反制，安全边界非常脆弱。
-    \item 共同问题：Agent 行为越来越自治，但用户和第三方很难确认它是否按权限、策略、版本执行。
+    \item 共同问题：Agent 行为越来越自治，但用户、服务方和审计方很难确认它是否按承诺执行。
   \end{itemize}
   \vspace{0.4em}
   \begin{block}{连接点}
-    Agent 治理需要“可验证执行记录”；ZKP 可以让验证者相信合规性，而不暴露完整提示词、私有工具输入或业务数据。
+    Agent 安全需要“可验证但不泄密”的执行证据；ZKP 可以把完整提示词、私有工具输入和业务数据藏在见证里，只公开合规证明。
   \end{block}
 \end{frame}
 
@@ -196,36 +196,83 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{新的可落地 idea：ZK-AgentGuard}
+\begin{frame}{新方向：ZK 与 Agent 安全结合}
   \begin{block}{一句话}
-    为 LLM Agent 生成“权限合规证明”：证明它在一次任务中只调用了被授权工具、使用了指定策略版本、没有越权访问敏感资源，同时不公开完整上下文。
+    为 LLM Agent 生成“可验证执行证明”：证明一次 Agent 任务满足身份、策略、工具权限和关键状态约束，同时不泄露完整上下文。
   \end{block}
   \begin{itemize}
-    \item 适用场景：企业内部 Agent、科研助理 Agent、自动化运维 Agent。
-    \item 公开输入：Agent 身份、策略哈希、工具白名单哈希、任务输出摘要。
-    \item 秘密见证：完整调用日志、用户私有输入、工具返回内容、内部推理状态摘要。
+    \item \kw{密码学侧}：承诺、签名、Merkle 日志、零知识证明、可选递归聚合。
+    \item \kw{大模型安全侧}：越权工具调用、提示词泄露、恶意 Agent 协作、策略绕过。
+    \item \kw{核心命题}：我不要求你信任 Agent 的口头解释，而是验证它留下的密码学证明。
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{研究问题与威胁模型}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{想证明什么}
+        \begin{itemize}
+          \item Agent 使用了指定身份和策略版本。
+          \item 每次工具调用都在授权集合内。
+          \item 参数范围、调用顺序、次数满足约束。
+          \item 输出绑定到同一份执行日志承诺。
+        \end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{block}{不试图证明什么}
+        \begin{itemize}
+          \item 不证明自然语言回答一定正确。
+          \item 不证明大模型内部推理完全可靠。
+          \item 不证明用户输入本身真实可信。
+          \item 第一阶段只证明权限与流程合规。
+        \end{itemize}
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{0.3em}
+  \begin{itemize}
+    \item 对手：被 prompt injection 诱导的 Agent、恶意外部 Agent、试图伪造日志的执行环境。
   \end{itemize}
 \end{frame}
 
 \begin{frame}{ZK-AgentGuard：系统草图}
   \centering
-  \begin{tikzpicture}[node distance=1.25cm, every node/.style={font=\small}]
-    \node[draw, rounded corners, fill=blue!8, minimum width=2.4cm, minimum height=0.8cm] (user) {用户任务};
-    \node[draw, rounded corners, fill=blue!8, right=of user, minimum width=2.4cm, minimum height=0.8cm] (agent) {Agent 执行};
-    \node[draw, rounded corners, fill=green!8, right=of agent, minimum width=2.5cm, minimum height=0.8cm] (log) {调用日志承诺};
-    \node[draw, rounded corners, fill=orange!10, below=of log, minimum width=2.6cm, minimum height=0.8cm] (prove) {ZK 证明器};
-    \node[draw, rounded corners, fill=purple!8, left=of prove, minimum width=2.8cm, minimum height=0.8cm] (verify) {审计/验证者};
+  \begin{tikzpicture}[node distance=1.05cm, every node/.style={font=\small}]
+    \node[draw, rounded corners, fill=blue!8, minimum width=2.2cm, minimum height=0.75cm] (user) {用户任务};
+    \node[draw, rounded corners, fill=blue!8, right=of user, minimum width=2.2cm, minimum height=0.75cm] (agent) {Agent};
+    \node[draw, rounded corners, fill=green!8, right=of agent, minimum width=2.3cm, minimum height=0.75cm] (proxy) {工具代理};
+    \node[draw, rounded corners, fill=green!8, right=of proxy, minimum width=2.5cm, minimum height=0.75cm] (log) {承诺日志};
+    \node[draw, rounded corners, fill=orange!10, below=of log, minimum width=2.5cm, minimum height=0.75cm] (prove) {ZK 证明器};
+    \node[draw, rounded corners, fill=purple!8, left=of prove, minimum width=2.6cm, minimum height=0.75cm] (verify) {审计/验证者};
     \draw[->, thick] (user) -- (agent);
-    \draw[->, thick] (agent) -- (log);
+    \draw[->, thick] (agent) -- node[above]{请求调用} (proxy);
+    \draw[->, thick] (proxy) -- node[above]{签名记录} (log);
     \draw[->, thick] (log) -- (prove);
-    \draw[->, thick] (prove) -- node[above]{合规证明 $\pi$} (verify);
+    \draw[->, thick] (prove) -- node[above]{证明 $\pi$} (verify);
     \draw[->, thick] (verify) -- node[left]{通过/拒绝} (user);
   \end{tikzpicture}
   \vspace{0.8em}
   \begin{itemize}
-    \item 先不证明大模型推理本身，只证明“工具调用序列满足策略自动机”。
-    \item 将复杂 AI 行为约束为有限状态机或规则 DSL，更容易电路化。
+    \item 工具代理层强制记录并签名，避免 Agent 自己编造日志。
+    \item 承诺日志作为公开锚点，完整提示词、工具返回和私有参数作为秘密见证。
   \end{itemize}
+\end{frame}
+
+\begin{frame}{可证明关系：把 Agent 行为电路化}
+  \begin{block}{形式化目标}
+    \[
+      R(\mathrm{id}, H(P), H(L), y;\ L,\sigma,\mathrm{trace})=1
+    \]
+  \end{block}
+  \begin{itemize}
+    \item 公开输入：Agent 身份 $\mathrm{id}$、策略哈希 $H(P)$、日志承诺 $H(L)$、输出摘要 $y$。
+    \item 秘密见证：调用日志 $L$、工具代理签名 $\sigma$、敏感参数和中间 trace。
+    \item 电路检查：签名有效、Merkle 路径正确、每一步满足策略自动机转移、输出摘要与日志绑定。
+  \end{itemize}
+  \begin{block}{为什么可落地}
+    第一阶段只证明离散日志和策略，不证明 LLM 的每个 token 生成过程，电路规模可控。
+  \end{block}
 \end{frame}
 
 \begin{frame}{最小可行实验设计}
@@ -236,39 +283,40 @@
       \toprule
       模块 & 第一版做法 \\
       \midrule
-      Agent 任务 & 日程安排、文件检索、报销提交三类简单流程 \\
-      策略语言 & 工具白名单 + 调用次数 + 参数范围 + 顺序约束 \\
-      证明命题 & 日志承诺中的每一步均满足策略自动机转移 \\
-      原型工具 & Circom/Noir/halo2 选一种先实现小电路 \\
-      评价指标 & 证明时间、验证时间、电路约束数、日志长度扩展性 \\
+      场景 & 文件检索 Agent：只能读授权目录，不能外传敏感片段 \\
+      策略 DSL & 工具白名单 + 路径前缀 + 参数范围 + 调用顺序 \\
+      日志机制 & 工具代理签名每次调用，Merkle tree 聚合日志 \\
+      证明命题 & 日志中每一步满足策略，最终输出绑定到日志根 \\
+      原型工具 & Noir 或 Circom 实现小电路，先证明 10--100 步 \\
+      评价指标 & 约束数、证明时间、验证时间、日志长度扩展性 \\
       \bottomrule
     \end{tabular}
   \end{table}
   \begin{block}{预期成果}
-    一个可演示 demo：验证者看到任务输出和证明，但看不到完整用户隐私和工具返回内容。
+    一个可演示 demo：验证者看到输出、策略版本、日志根和证明，但看不到完整用户输入与工具返回内容。
   \end{block}
 \end{frame}
 
 \begin{frame}{可能的难点与应对}
   \begin{itemize}
-    \item \kw{语义鸿沟}：自然语言策略难以直接证明。\\
-      应对：先设计结构化策略 DSL，再由自然语言映射到 DSL。
-    \item \kw{日志可信性}：Agent 可能不记录真实调用。\\
-      应对：工具代理层强制记录并签名，Agent 只能通过代理调用工具。
-    \item \kw{性能压力}：调用日志很长时约束数增长。\\
-      应对：用 Merkle 承诺、分段证明、递归聚合降低验证成本。
-    \item \kw{威胁模型}：证明合规不等于证明输出正确。\\
-      应对：先明确只证明权限与流程合规，后续再叠加输出性质证明。
+    \item \kw{策略语义}：自然语言安全策略难以直接证明。\\
+      应对：先定义结构化策略 DSL，再研究自然语言到 DSL 的可信编译。
+    \item \kw{日志可信性}：恶意 Agent 可能绕过或伪造日志。\\
+      应对：所有工具调用必须经过代理层，代理签名后才允许执行。
+    \item \kw{隐私与审计冲突}：审计需要证据，但日志包含敏感信息。\\
+      应对：日志做承诺，审计只验证零知识证明，必要时选择性打开片段。
+    \item \kw{性能压力}：长任务日志导致约束数增长。\\
+      应对：Merkle 承诺、分段证明、递归聚合，先做小规模基准。
   \end{itemize}
 \end{frame}
 
 \begin{frame}{下一阶段计划}
   \begin{enumerate}
     \item 补齐基础：Schnorr、Sigma 协议、Sumcheck/GKR、承诺方案。
-    \item 深读两条线：ZKML 推理证明与 Agent 治理安全。
-    \item 完成 ZK-AgentGuard 的形式化定义：公开输入、见证、关系、威胁模型。
-    \item 做最小原型：先证明 10--100 步工具调用日志满足策略。
-    \item 输出阶段成果：技术调研文档 + demo + 性能表格。
+    \item 深读两条线：Agent 治理安全与可验证计算/证明系统。
+    \item 完成 ZK-AgentGuard 的形式化定义：策略 DSL、公开输入、见证、关系、威胁模型。
+    \item 做最小原型：文件检索 Agent + 工具代理 + 日志承诺 + 合规证明。
+    \item 输出阶段成果：技术调研文档、demo、性能表格和局限性分析。
   \end{enumerate}
 \end{frame}
 
